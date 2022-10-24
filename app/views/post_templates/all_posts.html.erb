@@ -1,0 +1,53 @@
+<a href="/posts">Home</a>
+
+<h1>Posts</h1>
+
+<h2>Create a Post</h2>
+<form action="/insert_post">
+  <div>
+  <label for="post_title">Title</label>
+  <input id="post_title" type="text" name="query_title" placeholder="Enter the post title..">
+  </div>
+  <label for="post_content">Content</label>
+  <div>
+  <textarea id="post_content" type="text" name="query_content" rows="4" cols="50"></textarea>
+
+  </div>
+  <button type = "submit" >Add post</button>
+</form>
+
+<br>
+
+<table border="1">
+<tr>
+<th>
+Title
+</th>
+<th>
+Content
+</th>
+<th>
+Date & Time
+</th>
+<th>
+</th>
+</tr>
+
+<% @list_of_posts.each do |post|%>
+<tr>
+    <td>
+      <%= post.title %>
+    </td>
+    <td>
+      <%= post.content %>
+    </td>
+    <td>
+      <%= post.created_at %>
+    </td>
+    <td>
+      <a href="">Show Details</a>
+    </td>
+    
+</tr>
+<%end%>
+</table>
